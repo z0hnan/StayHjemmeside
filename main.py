@@ -6,7 +6,12 @@ import mysql.connector
 app = Flask(__name__)
 
 # MySQL Configuration
-
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="1701",
+    database="stayhjemmesidedb"
+)
 
 @app.route('/')
 def index():
