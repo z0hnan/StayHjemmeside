@@ -10,7 +10,7 @@ db = mysql.connector.connect(
     host="localhost",
     user="root",
     password="1701",
-    database="stayhjemmesidedb"
+    database="stayhjemmesidedbd"
 )
 
 @app.route('/')
