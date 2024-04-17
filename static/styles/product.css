@@ -1,15 +1,53 @@
+body {
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+.navbar-placeholder {
+    height: 60px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #111;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+li a:hover {
+    border: 1px solid black;
+}
+
 .grid-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .grid-item {
     display: flex;
     flex-direction: row;
     border: 1px solid rgba(0, 0, 0, 0);
-    padding: 0px 20px;
+    padding: 0px 150px;
     text-align: center;
     position: relative;
     color: rgb(0, 0, 0);
@@ -17,7 +55,7 @@
     font-family: 'simplifica';
     font-size: 20px;
     overflow: hidden;
-    height: 400px;
+    height: 600px;
 }
 
 .grid-img {
