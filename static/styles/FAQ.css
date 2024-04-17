@@ -1,3 +1,41 @@
 h2{
     text-shadow: 2px 2px 4px #D8D8D8;
 }
+body {
+    margin: 0;
+    background-color: #f1f1f1;
+  }
+  .navbar-placeholder {
+    height: 60px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #111;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid white;
+  }
+  
+  li a:hover {
+      border: 1px solid black;
+    }
+  
+  
