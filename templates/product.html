@@ -19,13 +19,28 @@
             </ul>
         </nav>
         <!--Product-->
-        <div class="grid-container">
-            <div class="grid-item">
-                <img class="grid-img" src="/static/assets/placeholder.jpg" alt="Image">
-                <p class="grid-text">Picture</p>
+        <div class="grid-container-row">
+            <div class="grid-item-row">
+                <img class="grid-img-row" src="/static/assets/placeholder.jpg" alt="Image">
+                <p class="grid-text-row">Picture</p>
                 </div>
-            <div class="grid-item">
-                <p class="grid-text">Description...</p>
+            <div class="grid-item-row"> <!--NÆSTE GANG LAV SÅ DER ER FORSKELLIGE DELE I DENNE MED TITEL ROW, STØRRELSE(LÆG I KURV) OG BESKRIVELSE. DEREFTER LOAD IND FRA MYSQL-->
+                <div class="grid-container-column">
+                    <div class="grid-item-column">
+                        <h1 class="grid-text-column">Title</h1>
+                    </div>
+                    <div class="grid-item-column">
+                        <p class="grid-text-column">Pris</p>
+                        <p class="grid-text-column">Tilbud</p>
+                    </div>
+                    <div class="grid-item-column">
+                        <button class="grid-button-column" onclick="addToCart()">Læg i kurv</button>
+                        <p class="grid-text-column">Størrelse</p>
+                    </div>
+                    <div class="grid-item-column">
+                        <p class="grid-text-column">Beskrivelse</p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
