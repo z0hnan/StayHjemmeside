@@ -23,14 +23,13 @@ ul {
 
 .split {
   float: right;
-}
-
-li {
-  float: left;
   text-align: center;
+  padding: 4px 16px;
+
 }
 
-li a {
+.non-split {
+  float: left;
   display: block;
   color: #111;
   text-align: center;
@@ -39,9 +38,10 @@ li a {
   border: 1px solid white;
 }
 
-li a:hover {
+
+.non-split:hover {
   border: 1px solid black;
-  }
+}
 
 
 .grid-container {
@@ -77,10 +77,9 @@ li a:hover {
 }
 
 .grid-text {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-decoration: none;
-    font-family: 'simplifica';
-
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  font-family: 'simplifica';
 }
