@@ -2,11 +2,13 @@ body {
   margin: 0;
   background-color: #f1f1f1;
 }
+
 .navbar-placeholder {
   height: 60px;
 }
+
 ul {
-  list-style-type: none;
+  list-style-type: none;;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -18,8 +20,14 @@ ul {
   z-index: 2;
 }
 
+
+.split {
+  float: right;
+}
+
 li {
   float: left;
+  text-align: center;
 }
 
 li a {
@@ -32,7 +40,7 @@ li a {
 }
 
 li a:hover {
-    border: 1px solid black;
+  border: 1px solid black;
   }
 
 
