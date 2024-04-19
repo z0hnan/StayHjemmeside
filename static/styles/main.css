@@ -36,15 +36,27 @@ ul {
   padding: 14px 16px;
   text-decoration: none;
   color: black;
-
+  position: relative; /* Added position relative */
 }
 
-
-.non-split:hover {
-  color: #46692a;
-  text-decoration: underline;
-  text-underline-offset: 5px;
+.non-split::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* Adjust if needed */
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #46692a;
+  transform-origin: bottom;
+  transition: transform 0.25s ease-out, width 0.25s ease-out; /* Added width transition */
+  transform: scaleX(0);
 }
+
+.non-split:hover::after {
+  transform: scaleX(1);
+  width: 100%; /* Adjust if needed */
+}
+
 
 .grid-container {
   display: grid;
