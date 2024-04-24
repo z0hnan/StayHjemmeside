@@ -25,37 +25,13 @@ def FAQ():
 def product():
     return render_template('product.html')
 
+@app.route('/get_data', methods=['GET'])
+def get_data():
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM forside")  # Replace with your actual SQL query
+    data = cursor.fetchall()  # Fetch all rows from the result set
+    cursor.close()  # Close cursor
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-cursor = db.cursor()
-
-@app.route('/static/scripts/<path:path>')
-def send_js(path):
-    return send_from_directory('static/scripts', path, mimetype='text/javascript')
-
-def get_item_title_by_id(item_id):
-    try:
-        print(f"SELECT title FROM items WHERE id = {item_id}")
-        cursor.execute(f"SELECT title FROM items WHERE id = {item_id}")
-        result = cursor.fetchone()
-        if result:
-            print(result)
-            return result[0]
-        else:
-            return None
-    except mysql.connector.Error as err:
-        print(err)
-        return None
-
-@app.route('/get_item_title', methods=['GET'])
-def get_item_title():
-    item_id = request.args.get('id')
-    if item_id:
-        item_title = get_item_title_by_id(item_id)
-        if item_title:
-            return jsonify({'title': item_title})
-        else:
-            return jsonify({'error': 'Item not found'}), 404
-    else:
-        return jsonify({'error': 'Missing item ID'}), 400
