@@ -1,4 +1,4 @@
-
+const itemID = 1;
 
 function AddToCart(productId, productName, productPrice) {
     alert("Product added to cart");
@@ -25,17 +25,26 @@ function AddToCart(productId, productName, productPrice) {
         }
 }
 
-$(document).ready(
-    function() {
-    var itemId = 1;
-    $.ajax({
-        url: '/get_item_title?id=' + itemId,
-        type: 'GET',
-        success: function(response) {
-            $('#item-title').text(response.title);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching item title:', error);
-        }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    // Make a GET request to fetch data
+    fetch('/get_data_item')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); 
+            const item = data[itemID - 1];
+            const title = item[1];
+            const description = item[2];
+            const price = item[3];
+
+            const titleElement = document.getElementById('titleElement');
+            titleElement.textContent = title;
+            const priceElement = document.getElementById('priceElement');
+            priceElement.textContent = price;
+            const descriptionElement = document.getElementById('descriptionElement');
+            descriptionElement.textContent = description;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Optionally, handle error
+        });
 });

@@ -25,10 +25,10 @@ def FAQ():
 def product():
     return render_template('product.html')
 
-@app.route('/get_data', methods=['GET'])
+@app.route('/get_data_item', methods=['GET'])
 def get_data():
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM forside")  # Replace with your actual SQL query
+    cursor.execute("SELECT * FROM items_view")  # Replace with your actual SQL query
     data = cursor.fetchall()  # Fetch all rows from the result set
     cursor.close()  # Close cursor
     return jsonify(data)
