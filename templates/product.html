@@ -6,8 +6,27 @@
         <title>Herretøj i Randers</title>
         <link rel="icon" href="/static/assets/STAY.ico" type="image/x-icon">
         <link rel="stylesheet" href="/static/styles/product.css">
-        <script src="static/scripts/product.js"></script>
+        <!-- <script src="static/scripts/product.js"></script> -->
     </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- JavaScript code for AJAX request -->
+    <script>
+        $(document).ready(
+            function() {
+            var itemId = 1;
+            $.ajax({
+                url: '/get_item_title?id=' + itemId,
+                type: 'GET',
+                success: function(response) {
+                    $('#item-title').text(response.title);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching item title:', error);
+                }
+            });
+        });
+    </script>
     <body>
         <!--Nav bar-->
         <div class="navbar-placeholder"></div>
@@ -27,7 +46,7 @@
             <div class="grid-item-row"> <!--NÆSTE GANG LAV SÅ DER ER FORSKELLIGE DELE I DENNE MED TITEL ROW, STØRRELSE(LÆG I KURV) OG BESKRIVELSE. DEREFTER LOAD IND FRA MYSQL-->
                 <div class="grid-container-column">
                     <div class="grid-item-column">
-                        <h1 class="grid-text-column">Title</h1>
+                        <h1 class="grid-text-column">Title: <span id="item-title"></span></h1>
                     </div>
                     <div class="grid-item-column">
                         <p class="grid-text-column">Pris</p>
