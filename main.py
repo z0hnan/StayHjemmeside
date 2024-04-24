@@ -1,6 +1,6 @@
 #pip install flask
 #pip install mysql-connector-python
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify, render_template
 import mysql.connector
 
 app = Flask(__name__)
