@@ -1,6 +1,6 @@
 #pip install flask
 #pip install mysql-connector-python
-from flask import Flask, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 import mysql.connector
 
 app = Flask(__name__)
@@ -10,59 +10,52 @@ db = mysql.connector.connect(
     host="localhost",
     user="root",
     password="1701",
-    database="stayhjemmesidedbd"
+    database="stayhjemmesidedb"
 )
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+@app.route('/FAQ')
+def FAQ():
+    return render_template('FAQ.html')
+
+@app.route('/product')
+def product():
+    return render_template('product.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
-# Establish a connection to MySQL
-conn = mysql.connector.connect(**db_config)
-cursor = conn.cursor()
+cursor = db.cursor()
 
-def add_item(name, price):
+@app.route('/static/scripts/<path:path>')
+def send_js(path):
+    return send_from_directory('static/scripts', path, mimetype='text/javascript')
+
+def get_item_title_by_id(item_id):
     try:
-        cursor.execute("INSERT INTO items (name, price) VALUES (%s, %s)", (name, price))
-        conn.commit()  # Commit the changes
-        return True
+        print(f"SELECT title FROM items WHERE id = {item_id}")
+        cursor.execute(f"SELECT title FROM items WHERE id = {item_id}")
+        result = cursor.fetchone()
+        if result:
+            print(result)
+            return result[0]
+        else:
+            return None
     except mysql.connector.Error as err:
-        conn.rollback()  # Rollback the changes if an error occurs
-        print(f"Error: {err}")
-        return False
-
-
-Sure, to modify the get_items function to retrieve the item name, price, and description based on the item ID, you'll need to adjust the SQL query accordingly to fetch these specific fields. Here's how you can modify the function:
-
-python
-Copy code
-# Function to fetch item details by ID from the database
-def get_item_by_id(item_id):
-    try:
-        cursor.execute("SELECT name, price, description FROM items WHERE id = %s", (item_id,))
-        item = cursor.fetchone()
-        return item
-    except mysql.connector.Error as err:
-        print(f"Error: {err}")
+        print(err)
         return None
 
-@app.route('/get_item', methods=['GET'])
-def get_item_route():
+@app.route('/get_item_title', methods=['GET'])
+def get_item_title():
     item_id = request.args.get('id')
     if item_id:
-        item = get_item_by_id(item_id)
-        if item:
-            item_data = {
-                'name': item[0],
-                'price': item[1],
-                'description': item[2]
-            }
-            return jsonify(item_data)
+        item_title = get_item_title_by_id(item_id)
+        if item_title:
+            return jsonify({'title': item_title})
         else:
-            return "Item not found", 404
+            return jsonify({'error': 'Item not found'}), 404
     else:
-        return "Missing item ID in request", 400
-
+        return jsonify({'error': 'Missing item ID'}), 400
