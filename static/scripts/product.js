@@ -24,3 +24,18 @@ function AddToCart(productId, productName, productPrice) {
             console.log("Item added to cart:", item);
         }
 }
+
+$(document).ready(
+    function() {
+    var itemId = 1;
+    $.ajax({
+        url: '/get_item_title?id=' + itemId,
+        type: 'GET',
+        success: function(response) {
+            $('#item-title').text(response.title);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching item title:', error);
+        }
+    });
+});
