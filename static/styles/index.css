@@ -7,6 +7,10 @@ body {
   height: 60px;
 }
 
+.gapper {
+  height: 10px;
+}
+
 ul {
   list-style-type: none;;
   margin: 0;
