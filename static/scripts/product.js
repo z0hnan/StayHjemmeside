@@ -33,15 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(data); 
             const item = data[itemID - 1];
             const title = item[1];
-            const description = item[2];
-            const price = item[3];
+            const price = item[2];
+            const img = item[3];
 
             const titleElement = document.getElementById('titleElement');
             titleElement.textContent = title;
             const priceElement = document.getElementById('priceElement');
             priceElement.textContent = price;
-            const descriptionElement = document.getElementById('descriptionElement');
-            descriptionElement.textContent = description;
+            const imgElement = document.getElementById('imgElement');
+            imgElement.style.backgroundImage ="url(" + img+")";
         })
         .catch(error => {
             console.error('Error:', error);
