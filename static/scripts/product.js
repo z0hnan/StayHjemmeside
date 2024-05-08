@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = item[1];
             const price = item[2];
             const img = item[3];
+            const description = item[4];
 
             const titleElement = document.getElementById('titleElement');
             titleElement.textContent = title;
@@ -42,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
             priceElement.textContent = price;
             const imgElement = document.getElementById('imgElement');
             imgElement.style.backgroundImage ="url(" + img+")";
+            const descriptionElement = document.getElementById('descriptionElement');
+            descriptionElement.textContent = description;
         })
         .catch(error => {
             console.error('Error:', error);

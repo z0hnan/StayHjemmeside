@@ -37,13 +37,13 @@ def get_data_item():
     cursor.close()  # Close cursor
     return jsonify(data)
 
-"""@app.route('/get_data_itemtype', methods=['GET'])
+"""@app.route('/get_data_itemtype', methods=['GET']) #If we want to get data on itemtype to make to website more dynamic
 def get_data_itemtype():
     cursor = db.cursor()
     cursor.execute("SELECT * FROM items_view")  # Replace with your actual SQL query
     data = cursor.fetchall()  # Fetch all rows from the result set
     cursor.close()  # Close cursor
-    return jsonify(data)"""
+    return jsonify(data)""" 
 
 if __name__ == '__main__':
     app.run(debug=True)

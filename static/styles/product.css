@@ -68,7 +68,7 @@ body {
 
 .grid-item-row {
   border: 1px solid white;
-  padding: 0px 20px;
+  padding: 20px 20px;
   text-align: center;
   position: relative;
   color: white;
@@ -104,14 +104,15 @@ body {
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0);
     padding: 0px 50px;
-    text-align: center;
+    text-align: left;
+    justify-content: center;
     position: relative;
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-family: 'simplifica';
-    font-size: 20px;
+    font-size: 18px;
     overflow: visible;
-    height: 80px;
+    height: 100px;
 }
 
 .grid-text-column {
@@ -121,6 +122,7 @@ body {
     text-decoration: none;
     font-family: 'simplifica';
     overflow: visible;
+    height: 100px;
 }
 
 .grid-button-column {
