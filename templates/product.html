@@ -27,26 +27,23 @@
         <!--Product-->
         <div class="grid-container-row">
             <div class="grid-item-row">
-                <img class="grid-img-row" src="/static/assets/placeholder.jpg" alt="Image">
-                <p class="grid-text-row">Picture</p>
+                <img class="grid-img-row" id="imgElement">
                 </div>
-            <div class="grid-item-row"> <!--NÆSTE GANG LAV SÅ DER ER FORSKELLIGE DELE I DENNE MED TITEL ROW, STØRRELSE(LÆG I KURV) OG BESKRIVELSE. DEREFTER LOAD IND FRA MYSQL-->
+            <div class="grid-item-row">
                 <div class="grid-container-column">
                     <div class="grid-item-column">
-                        <h1 class="grid-text-column">Title: <span id="titleElement"></span></h1>
+                        <h1 class="grid-text-column"><span id="titleElement"></span></h1>
                     </div>
                     <div class="grid-item-column">
-                        <p class="grid-text-column">Pris: <span id="priceElement"></span></p>
+                        <p class="grid-text-column">Pris: <span id="priceElement"></span> kr.</p>
                     </div>
                     <div class="grid-item-column">
                         <button class="grid-button-column" onclick="addToCart()">Læg i kurv</button>
                         <p class="grid-text-column">Størrelse</p>
                     </div>
-                    <div class="grid-item-column">
-                        <p class="grid-text-column">Beskrivelse: <span id="descriptionElement"></span></p>
-                    </div>
                 </div>
             </div>
         </div>
+        <p style="text-align: center; text-decoration: none; color: black;"><a href="/FAQ">About us</a></p>
     </body>
 </html>
