@@ -93,6 +93,7 @@ ul {
   top: 0;
   left: 0;
   z-index: 1;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .grid-text {
@@ -101,6 +102,7 @@ ul {
   color: white;
   text-decoration: none;
   font-family: 'simplifica';
+  opacity: 0;
 }
 
 .big-item {
