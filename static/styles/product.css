@@ -102,16 +102,13 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0);
-    padding: 0px 2vw;
-    text-align: left;
-    justify-content: center;
+    padding: 0vh 2vw;
     position: relative;
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-family: 'simplifica';
     font-size: 18px;
     overflow: visible;
-    height: 100px;
 }
 
 .grid-text-column {
@@ -121,7 +118,7 @@ body {
     text-decoration: none;
     font-family: 'simplifica';
     overflow: visible;
-    height: 100px;
+    text-align: left;
 }
 
 .grid-button-column {
@@ -132,7 +129,7 @@ body {
     text-decoration: none;
     font-family: 'simplifica';
     width: 20vw;
-    height: 60px;
+    height: 4vh;
     text-align: center;
     justify-content: center;
 }
