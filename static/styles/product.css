@@ -62,8 +62,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 30px 50px;
   justify-content: center;
-  margin: 0px 400px;
-
+  margin: 0px 20vw;
 }
 
 .grid-item-row {
@@ -76,13 +75,13 @@ body {
   font-family: 'simplifica';
   font-size: 20px;
   overflow: hidden;
-  height: 800px;
+  height: 100vh;
   justify-content: center;
 }
 
 .grid-img-row {
-  width: 500px;
-  height: 1000px;
+  width: 100vh;
+  height: 100vw;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -103,7 +102,7 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0);
-    padding: 0px 50px;
+    padding: 0px 2vw;
     text-align: left;
     justify-content: center;
     position: relative;
@@ -132,6 +131,8 @@ body {
     background-color: rgb(70, 105, 42);
     text-decoration: none;
     font-family: 'simplifica';
-    width: 400px;
-    height: 50px;
+    width: 20vw;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
 }
