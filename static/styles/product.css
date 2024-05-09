@@ -1,61 +1,66 @@
 body {
-    margin: 0;
-    background-color: #f1f1f1;
-  }
-  
-  .navbar-placeholder {
-    height: 60px;
-  }
-  
-  ul {
-    list-style-type: none;;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
-    border-bottom: 1px solid lightgray;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-  }
-  
-  
-  .split {
-    float: right;
-    text-align: center;
-    padding: 4px 16px;
-  
-  }
-  
-  .non-split {
-    float: left;
-    display: block;
-    color: #111;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: black;
-    position: relative; /* Added position relative */
-  }
-  
-  .non-split::after {
-    content: '';
-    position: absolute;
-    width: 100%; /* Adjust if needed */
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #46692a;
-    transform-origin: bottom;
-    transition: transform 0.25s ease-out, width 0.25s ease-out; /* Added width transition */
-    transform: scaleX(0);
-  }
-  
-  .non-split:hover::after {
-    transform: scaleX(1);
-    width: 100%; /* Adjust if needed */
-  }
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+.navbar-placeholder {
+  height: 60px;
+}
+
+ul {
+  list-style-type: none;
+  ;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+
+.split {
+  float: right;
+  text-align: center;
+  padding: 4px 16px;
+
+}
+
+.non-split {
+  float: left;
+  display: block;
+  color: #111;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  /* Added position relative */
+}
+
+.non-split::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  /* Adjust if needed */
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #46692a;
+  transform-origin: bottom;
+  transition: transform 0.25s ease-out, width 0.25s ease-out;
+  /* Added width transition */
+  transform: scaleX(0);
+}
+
+.non-split:hover::after {
+  transform: scaleX(1);
+  width: 100%;
+  /* Adjust if needed */
+}
 
 .grid-container-row {
   display: grid;
@@ -99,37 +104,37 @@ body {
 }
 
 .grid-item-column {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0);
-    padding: 0vh 2vw;
-    position: relative;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-family: 'simplifica';
-    font-size: 18px;
-    overflow: visible;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 0vh 2vw;
+  position: relative;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: 'simplifica';
+  font-size: 18px;
+  overflow: visible;
 }
 
 .grid-text-column {
-    position: relative;
-    z-index: 1;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-family: 'simplifica';
-    overflow: visible;
-    text-align: left;
+  position: relative;
+  z-index: 1;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: 'simplifica';
+  overflow: visible;
+  text-align: left;
 }
 
 .grid-button-column {
-    position: relative;
-    z-index: 1;
-    color: rgb(255, 255, 255);
-    background-color: rgb(70, 105, 42);
-    text-decoration: none;
-    font-family: 'simplifica';
-    width: 20vw;
-    height: 4vh;
-    text-align: center;
-    justify-content: center;
+  position: relative;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  background-color: rgb(70, 105, 42);
+  text-decoration: none;
+  font-family: 'simplifica';
+  width: 20vw;
+  height: 4vh;
+  text-align: center;
+  justify-content: center;
 }
