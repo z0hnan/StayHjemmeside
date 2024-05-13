@@ -27,3 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error:', error);
         });
 });
+
+document.getElementById('addToCart').addEventListener('click', addToCart);
+
+//Denne funktion er til at tilføje et produkt til kurven
+function addToCart() {
+    // Get the cart from sessionStorage
+    var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+    // Add the item to the cart
+    cart.push(itemID);
+
+    console.log('Cart:', cart);
+
+    // Store the cart in sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+
+    // Redirect to the cart page
+    //window.location.href = '/cart';
+}
