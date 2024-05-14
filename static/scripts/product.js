@@ -52,7 +52,4 @@ function addToCart() {
         document.getElementById('addToCart').style.backgroundColor = "rgb(70, 105, 42)";
         document.getElementById('addToCart').style.color = "white";
     }, 1500);  
-
-    // Redirect to the cart page
-    //window.location.href = '/cart';
 }

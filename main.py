@@ -29,6 +29,10 @@ def products():
 def product():
     return render_template('product.html')
 
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
 @app.route('/get_data_item', methods=['GET'])
 def get_data_item():
     cursor = db.cursor()
