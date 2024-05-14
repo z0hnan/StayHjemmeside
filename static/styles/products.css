@@ -9,7 +9,6 @@ body {
 
 ul {
   list-style-type: none;
-  ;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -32,11 +31,10 @@ ul {
 .non-split {
   float: left;
   display: block;
-  color: #111;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  color: black;
   position: relative;
 }
 

@@ -44,11 +44,11 @@ function addToCart() {
     document.getElementById('addToCart').textContent = "Tilføjet til kurven";
     document.getElementById('addToCart').style.backgroundColor = "white";
     document.getElementById('addToCart').style.color = "black";
-    
+
     // Ændrer knappens tekst og farve tilbage efter 1,5 sekund
-    setTimeout(function(){ 
+    setTimeout(function () {
         document.getElementById('addToCart').textContent = "Læg i kurv";
         document.getElementById('addToCart').style.backgroundColor = "rgb(70, 105, 42)";
         document.getElementById('addToCart').style.color = "white";
-    }, 1500);  
+    }, 1500);
 }

@@ -1,13 +1,13 @@
 var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Make a GET request to fetch data
+    // Laver en GET request for at hente data
     fetch('/get_data_item')
         .then(response => response.json())
         .then(data => {
             console.log(data);
 
-            // Function to display cart items
+            // Denne funktion er til at vise produkterne i kurven
             function displayCartItems() {
                 const cartList = document.getElementById('cart-list');
                 cartList.innerHTML = '';
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const itemFromDatabase = data[item - 1];
                     total += parseFloat(itemFromDatabase[2]);
                 });
-                var totalRounded = Math.round(total*100)/100;
+                var totalRounded = Math.round(total * 100) / 100;
                 document.getElementById('total').textContent = totalRounded + ' kr.';
             }
             calculateTotal();

@@ -9,7 +9,6 @@ body {
 
 .navbar-list {
     list-style-type: none;
-    ;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -21,7 +20,6 @@ body {
     z-index: 2;
 }
 
-
 .split {
     float: right;
     text-align: center;
@@ -32,7 +30,6 @@ body {
 .non-split {
     float: left;
     display: block;
-    color: #111;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

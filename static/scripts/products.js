@@ -1,26 +1,26 @@
-export var itemData = {
+var itemData = {
     itemID: null
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Get all links with class ".grid-img"
+    // Her tager den alle links med classen "grid-img"
     var links = document.querySelectorAll('.grid-img');
 
-    // Loop through each link
+    // For hver link i links variablen gør den følgende
     links.forEach(function (link) {
-        // Attach a click event listener to each link
+        // Tilføjer en eventlistener til hvert link
         link.addEventListener('click', function (event) {
-            // Prevent the default link behavior because we just want to get the href attribute
+            // Forhindrer at linksne virker som de normalt ville da det ville sende brugeren til en ny side uden de skal det
             event.preventDefault();
 
-            // Get the href attribute of the clicked link (e.g. "/product?var1=1")
+            // Henter href attributten fra linket der er blevet trykket på og gemmer den i variablen href
             var href = this.getAttribute('href');
 
-            // Extract variables from the href
+            // Henter variablen var1 fra URL'en og gemmer den i variablen var1
             var urlParams = new URLSearchParams(href.split('?')[1]);
             var var1 = urlParams.get('var1');
 
-            // Pass variables to the JavaScript file using the getItemid function
+            // Kalder funktionen getItemid med variablen var1 som argument
             getItemid(var1);
         });
     });
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function getItemid(var1) {
     itemData.itemID = var1;
     console.log('Item ID:', itemData.itemID);
-    // Store itemID in sessionStorage so that it can be accessed in product.js
+    // Gemmer itemID i sessionStorage
     sessionStorage.setItem('itemID', itemData.itemID);
-    // Redirect to the item page with the itemID
+    // Sender brugeren til produkt siden
     window.location.href = '/product';
 }

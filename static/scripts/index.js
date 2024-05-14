@@ -1,8 +1,9 @@
+// Dette er en funktion der bruges til at gøre billeder og tekst på siden mere dynamiske med blur og opacity effekter
 document.addEventListener('DOMContentLoaded', function() {
     $('.grid-img').hover(
         function() {
           $(this).siblings('.grid-text').css('opacity', 1);
-          $(this).css("filter", "blur(5px)"); // Separate multiple CSS properties correctly
+          $(this).css("filter", "blur(5px)");
           $(this).css("-webkit-filter", "blur(5px)");
           $(this).css("transform", "scale(1.1)");        
         },
