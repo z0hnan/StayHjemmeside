@@ -2,7 +2,7 @@ var itemID = sessionStorage.getItem('itemID');
 console.log('Item ID:', itemID);
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Make a GET request to fetch data
+    // Laver en GET request for at hente data
     fetch('/get_data_item')
         .then(response => response.json())
         .then(data => {
@@ -32,21 +32,20 @@ document.getElementById('addToCart').addEventListener('click', addToCart);
 
 //Denne funktion er til at tilføje et produkt til kurven
 function addToCart() {
-    // Get the cart from sessionStorage
+    // Henter kurven fra sessionStorage
     var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
-
-    // Add the item to the cart
     cart.push(itemID);
-
     console.log('Cart:', cart);
 
-    // Store the cart in sessionStorage
+    // Gemmer kurven i sessionStorage igen
     sessionStorage.setItem('cart', JSON.stringify(cart));
 
+    // Ændrer knappens tekst og farve når der trykkes på den
     document.getElementById('addToCart').textContent = "Tilføjet til kurven";
     document.getElementById('addToCart').style.backgroundColor = "white";
     document.getElementById('addToCart').style.color = "black";
     
+    // Ændrer knappens tekst og farve tilbage efter 1,5 sekund
     setTimeout(function(){ 
         document.getElementById('addToCart').textContent = "Læg i kurv";
         document.getElementById('addToCart').style.backgroundColor = "rgb(70, 105, 42)";
