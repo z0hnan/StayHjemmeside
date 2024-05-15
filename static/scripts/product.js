@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
+// Event listener til knappen
 document.getElementById('addToCart').addEventListener('click', addToCart);
 
 //Denne funktion er til at tilføje et produkt til kurven
