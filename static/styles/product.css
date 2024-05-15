@@ -63,7 +63,8 @@ ul {
 }
 
 .grid-item-row {
-  border: 1px solid white;
+  border: 1px solid #c0c0c0;
+  background-color: white;
   padding: 20px 20px;
   text-align: center;
   position: relative;
